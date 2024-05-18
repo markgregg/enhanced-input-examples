@@ -2,7 +2,7 @@ import * as React from 'react';
 import EnhancedInput, { TextBlock, ClearButton } from 'react-enhanced-input';
 import { isPrice, isSize, isinCodes, isinPartialRegEx, isinRegEx, tickerRegEx, tickers } from './data';
 
-export function PillDecorators() {
+export function DropdownMenus() {
   const [text, setText] = React.useState<string>('');
   const [textBlocks, setTextBlocks] = React.useState<TextBlock[]>([]);
 
