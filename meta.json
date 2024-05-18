@@ -11,7 +11,7 @@
         "Dropdown menus"
       ],
       "locStart": 5,
-      "locEnd": 213,
+      "locEnd": 173,
       "filePath": "src/dropdown-menus.stories.tsx",
       "namedExport": "PillDecorators",
       "meta": {}
@@ -22,7 +22,7 @@
         "Input decorator"
       ],
       "locStart": 5,
-      "locEnd": 201,
+      "locEnd": 199,
       "filePath": "src/input-decorator.stories.tsx",
       "namedExport": "InputDecorator",
       "meta": {}
