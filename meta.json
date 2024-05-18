@@ -11,7 +11,7 @@
         "Dropdown menus"
       ],
       "locStart": 5,
-      "locEnd": 173,
+      "locEnd": 172,
       "filePath": "src/dropdown-menus.stories.tsx",
       "namedExport": "DropdownMenus",
       "meta": {}
