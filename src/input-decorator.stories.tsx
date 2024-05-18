@@ -7,9 +7,7 @@ export function InputDecorator() {
   const [textBlocks, setTextBlocks] = React.useState<TextBlock[]>([]);
 
   React.useEffect(() => {
-    handleChange(`XS1966819226 asdkljs ahjklas kjk IT000453454 al,dsklaj klasjd lk
-    asdl sajkl; ABD l;kdl;k asd lasd;jk sa;k akjl kljkl jkj sad AT000B126958
-    FAN ZEN YY`, 0, true);
+    handleChange(`Click the X button to clear the text`, 0, true);
   }, []);
 
   const handleChange = (

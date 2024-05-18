@@ -1,5 +1,5 @@
 import * as React from 'react';
-import EnhancedInput, { TextBlock, PillDecorator, ClearButton } from 'react-enhanced-input';
+import EnhancedInput, { TextBlock, ClearButton } from 'react-enhanced-input';
 import { isPrice, isSize, isinCodes, isinPartialRegEx, isinRegEx, tickerRegEx, tickers } from './data';
 
 export function PillDecorators() {
@@ -7,9 +7,7 @@ export function PillDecorators() {
   const [textBlocks, setTextBlocks] = React.useState<TextBlock[]>([]);
 
   React.useEffect(() => {
-    handleChange(`XS1966819226 asdkljs ahjklas kjk IT000453454 al,dsklaj klasjd lk
-    asdl sajkl; ABD l;kdl;k asd lasd;jk sa;k akjl kljkl jkj sad AT000B126958
-    FAN ZEN YY`, 0, true);
+    handleChange(`Type XS1 at the end of the line `, 0, true);
   }, []);
 
   const handleChange = (
@@ -39,25 +37,6 @@ export function PillDecorators() {
               start: pos,
               length: token.length,
               style,
-              Decorator: PillDecorator,
-              decoratorStyle: {
-                backgroundColor: 'rgb(68, 68, 68)',
-                color: 'white',
-                fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-              }
-            });
-          } else {
-            tempBlocks.push({
-              id: `isin${pos}`,
-              start: pos,
-              length: token.length,
-              style,
-              Decorator: PillDecorator,
-              decoratorStyle: {
-                backgroundColor: 'rgb(154, 61, 55)',
-                color: 'white',
-                fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-              }
             });
           }
         }
@@ -68,12 +47,6 @@ export function PillDecorators() {
             start: pos,
             length: token.length,
             style,
-            Decorator: PillDecorator,
-            decoratorStyle: {
-              backgroundColor: 'rgb(68, 68, 68)',
-              color: 'white',
-              fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-            }
           });
         }
       } else if (isSize(token)) {
@@ -83,13 +56,6 @@ export function PillDecorators() {
             start: pos,
             length: token.length,
             style,
-            customProps: 'Size',
-            Decorator: PillDecorator,
-            decoratorStyle: {
-              backgroundColor: 'rgb(68, 68, 68)',
-              color: 'white',
-              fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-            }
           });
         }
       } else if (isPrice(token)) {
@@ -99,12 +65,6 @@ export function PillDecorators() {
             start: pos,
             length: token.length,
             style,
-            Decorator: PillDecorator,
-            decoratorStyle: {
-              backgroundColor: 'rgb(68, 68, 68)',
-              color: 'white',
-              fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-            }
           });
         }
       } else if (
