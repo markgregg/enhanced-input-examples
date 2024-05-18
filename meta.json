@@ -5,15 +5,15 @@
     "version": 1
   },
   "stories": {
-    "dropdown-menus--pill-decorators": {
-      "name": "Pill decorators",
+    "dropdown-menus--dropdown-menus": {
+      "name": "Dropdown menus",
       "levels": [
         "Dropdown menus"
       ],
       "locStart": 5,
       "locEnd": 173,
       "filePath": "src/dropdown-menus.stories.tsx",
-      "namedExport": "PillDecorators",
+      "namedExport": "DropdownMenus",
       "meta": {}
     },
     "input-decorator--input-decorator": {
