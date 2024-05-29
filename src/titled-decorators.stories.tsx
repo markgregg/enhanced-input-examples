@@ -1,15 +1,27 @@
 import * as React from 'react';
 import EnhancedInput, { TextBlock, TitleDecorator } from 'react-enhanced-input';
-import { isPrice, isSize, isinCodes, isinPartialRegEx, isinRegEx, tickerRegEx, tickers } from './data';
+import {
+  isPrice,
+  isSize,
+  isinCodes,
+  isinPartialRegEx,
+  isinRegEx,
+  tickerRegEx,
+  tickers,
+} from './data';
 
 export function TitleDecorators() {
   const [text, setText] = React.useState<string>('');
   const [textBlocks, setTextBlocks] = React.useState<TextBlock[]>([]);
 
   React.useEffect(() => {
-    handleChange(`XS1966819226 asdkljs ahjklas kjk IT000453454 al,dsklaj klasjd lk
+    handleChange(
+      `XS1966819226 asdkljs ahjklas kjk IT000453454 al,dsklaj klasjd lk
     asdl sajkl; ABD l;kdl;k asd lasd;jk sa;k akjl kljkl jkj sad AT000B126958
-    FAN ZEN YY`, 0, true);
+    FAN ZEN YY`,
+      0,
+      true,
+    );
   }, []);
 
   const handleChange = (
@@ -44,8 +56,9 @@ export function TitleDecorators() {
               decoratorStyle: {
                 backgroundColor: 'rgb(68, 68, 68)',
                 color: 'white',
-                fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-              }
+                fontFamily:
+                  'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+              },
             });
           } else {
             tempBlocks.push({
@@ -58,8 +71,9 @@ export function TitleDecorators() {
               decoratorStyle: {
                 backgroundColor: 'rgb(154, 61, 55)',
                 color: 'white',
-                fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-              }
+                fontFamily:
+                  'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+              },
             });
           }
         }
@@ -75,8 +89,9 @@ export function TitleDecorators() {
             decoratorStyle: {
               backgroundColor: 'rgb(68, 68, 68)',
               color: 'white',
-              fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-            }
+              fontFamily:
+                'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            },
           });
         }
       } else if (isSize(token)) {
@@ -91,8 +106,9 @@ export function TitleDecorators() {
             decoratorStyle: {
               backgroundColor: 'rgb(68, 68, 68)',
               color: 'white',
-              fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-            }
+              fontFamily:
+                'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            },
           });
         }
       } else if (isPrice(token)) {
@@ -107,8 +123,9 @@ export function TitleDecorators() {
             decoratorStyle: {
               backgroundColor: 'rgb(68, 68, 68)',
               color: 'white',
-              fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-            }
+              fontFamily:
+                'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            },
           });
         }
       } else if (
@@ -174,9 +191,9 @@ export function TitleDecorators() {
         !b.customProps
           ? b
           : {
-            ...b,
-            customProps: { title: b.customProps, position: 'top' },
-          },
+              ...b,
+              customProps: { title: b.customProps, position: 'top' },
+            },
       ),
     [textBlocks],
   );
@@ -184,13 +201,12 @@ export function TitleDecorators() {
   return (
     <div>
       <span>
-        The below example demonstrates pill decorators (decorators that look like pills).
-        The code for the TextBlock is shown below.
-        A larger line height is recommended when deocrating text.
+        The below example demonstrates pill decorators (decorators that look
+        like pills). The code for the TextBlock is shown below. A larger line
+        height is recommended when deocrating text.
       </span>
       <pre>
-        {
-          `
+        {`
 TextBlock
 {
   id: 'id',
@@ -204,13 +220,13 @@ TextBlock
     color: 'white',
     fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
   }
-}`
-        }
+}`}
       </pre>
       <div style={{ height: '300px', width: '600px', position: 'relative' }}>
         <EnhancedInput
           style={{
-            fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            fontFamily:
+              'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
           }}
           text={text}
           textBlocks={updatedBlocks}

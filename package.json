@@ -8,7 +8,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "vite",
+    "dev": "npx ladle serve",
     "build": "npx ladle build",
     "lint": "eslint src",
     "lint:fix": "eslint --fix src",

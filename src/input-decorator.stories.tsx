@@ -1,6 +1,18 @@
 import * as React from 'react';
-import EnhancedInput, { TextBlock, PillDecorator, ClearButton } from 'react-enhanced-input';
-import { isPrice, isSize, isinCodes, isinPartialRegEx, isinRegEx, tickerRegEx, tickers } from './data';
+import EnhancedInput, {
+  TextBlock,
+  PillDecorator,
+  ClearButton,
+} from 'react-enhanced-input';
+import {
+  isPrice,
+  isSize,
+  isinCodes,
+  isinPartialRegEx,
+  isinRegEx,
+  tickerRegEx,
+  tickers,
+} from './data';
 
 export function InputDecorator() {
   const [text, setText] = React.useState<string>('');
@@ -41,8 +53,9 @@ export function InputDecorator() {
               decoratorStyle: {
                 backgroundColor: 'rgb(68, 68, 68)',
                 color: 'white',
-                fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-              }
+                fontFamily:
+                  'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+              },
             });
           } else {
             tempBlocks.push({
@@ -54,8 +67,9 @@ export function InputDecorator() {
               decoratorStyle: {
                 backgroundColor: 'rgb(154, 61, 55)',
                 color: 'white',
-                fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-              }
+                fontFamily:
+                  'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+              },
             });
           }
         }
@@ -70,8 +84,9 @@ export function InputDecorator() {
             decoratorStyle: {
               backgroundColor: 'rgb(68, 68, 68)',
               color: 'white',
-              fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-            }
+              fontFamily:
+                'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            },
           });
         }
       } else if (isSize(token)) {
@@ -86,8 +101,9 @@ export function InputDecorator() {
             decoratorStyle: {
               backgroundColor: 'rgb(68, 68, 68)',
               color: 'white',
-              fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-            }
+              fontFamily:
+                'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            },
           });
         }
       } else if (isPrice(token)) {
@@ -101,8 +117,9 @@ export function InputDecorator() {
             decoratorStyle: {
               backgroundColor: 'rgb(68, 68, 68)',
               color: 'white',
-              fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
-            }
+              fontFamily:
+                'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            },
           });
         }
       } else if (
@@ -165,24 +182,26 @@ export function InputDecorator() {
   return (
     <div>
       <span>
-        Input decorators can be any element. The below example shows a clear button.
+        Input decorators can be any element. The below example shows a clear
+        button.
       </span>
       <pre>
-        {
-          `
+        {`
 inputDecorator={<ClearButton onClick={() => handleChange('', 0, true)} />}
-`
-        }
+`}
       </pre>
       <div style={{ height: '400px', width: '600px', position: 'relative' }}>
         <EnhancedInput
           style={{
-            fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            fontFamily:
+              'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
           }}
           lineHeight="40px"
           text={text}
           textBlocks={textBlocks}
-          inputDecorator={<ClearButton onClick={() => handleChange('', 0, true)} />}
+          inputDecorator={
+            <ClearButton onClick={() => handleChange('', 0, true)} />
+          }
           onChange={(newText, position) =>
             handleChange(newText, position, true)
           }

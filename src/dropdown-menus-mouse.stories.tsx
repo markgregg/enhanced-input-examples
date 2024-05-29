@@ -1,5 +1,5 @@
 import * as React from 'react';
-import EnhancedInput, { TextBlock, ClearButton } from 'react-enhanced-input';
+import EnhancedInput, { TextBlock, PillDecorator } from 'react-enhanced-input';
 import {
   isPrice,
   isSize,
@@ -10,12 +10,18 @@ import {
   tickers,
 } from './data';
 
-export function DropdownMenus() {
+export function DropDownMenusMouse() {
   const [text, setText] = React.useState<string>('');
   const [textBlocks, setTextBlocks] = React.useState<TextBlock[]>([]);
 
   React.useEffect(() => {
-    handleChange(`Type XS1 at the end of the line `, 0, true);
+    handleChange(
+      `XS1966819226 asdkljs ahjklas kjk IT000453454 al,dsklaj klasjd lk
+    asdl sajkl; ABD l;kdl;k asd lasd;jk sa;k akjl kljkl jkj sad AT000B126958
+    FAN ZEN YY`,
+      0,
+      true,
+    );
   }, []);
 
   const handleChange = (
@@ -45,6 +51,35 @@ export function DropdownMenus() {
               start: pos,
               length: token.length,
               style,
+              Decorator: PillDecorator,
+              decoratorStyle: {
+                backgroundColor: 'rgb(68, 68, 68)',
+                color: 'white',
+                fontFamily:
+                  'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+              },
+              dropDown: {
+                activation: 'mouseover',
+                options: ['on', 'off'],
+              },
+            });
+          } else {
+            tempBlocks.push({
+              id: `isin${pos}`,
+              start: pos,
+              length: token.length,
+              style,
+              Decorator: PillDecorator,
+              decoratorStyle: {
+                backgroundColor: 'rgb(154, 61, 55)',
+                color: 'white',
+                fontFamily:
+                  'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+              },
+              dropDown: {
+                activation: 'mouseover',
+                options: ['on', 'off'],
+              },
             });
           }
         }
@@ -55,6 +90,17 @@ export function DropdownMenus() {
             start: pos,
             length: token.length,
             style,
+            Decorator: PillDecorator,
+            decoratorStyle: {
+              backgroundColor: 'rgb(68, 68, 68)',
+              color: 'white',
+              fontFamily:
+                'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            },
+            dropDown: {
+              activation: 'mouseover',
+              options: ['on', 'off'],
+            },
           });
         }
       } else if (isSize(token)) {
@@ -64,6 +110,17 @@ export function DropdownMenus() {
             start: pos,
             length: token.length,
             style,
+            Decorator: PillDecorator,
+            decoratorStyle: {
+              backgroundColor: 'rgb(68, 68, 68)',
+              color: 'white',
+              fontFamily:
+                'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            },
+            dropDown: {
+              activation: 'mouseover',
+              options: ['on', 'off'],
+            },
           });
         }
       } else if (isPrice(token)) {
@@ -73,6 +130,17 @@ export function DropdownMenus() {
             start: pos,
             length: token.length,
             style,
+            Decorator: PillDecorator,
+            decoratorStyle: {
+              backgroundColor: 'rgb(68, 68, 68)',
+              color: 'white',
+              fontFamily:
+                'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            },
+            dropDown: {
+              activation: 'mouseover',
+              options: ['on', 'off'],
+            },
           });
         }
       } else if (
@@ -135,25 +203,27 @@ export function DropdownMenus() {
   return (
     <div>
       <span>
-        Dropdowns list can be assoicated against a TextBlock. They will always
-        appear just below the block. They can be activiated either by -<br />
-        <br />
-        <b>cursorposition:</b> when the cursor is within the TextBlock
-        <br />
-        <b>mouseover:</b> when the mouse is over the TextBlock
+        The below example demonstrates dropdown menus that activie when you move
+        yiouor mouse over a decorator
       </span>
       <pre>
         {`
 TextBlock
 {
-  id: 'bad-edit',
+  id: 'id',
   start: pos,
   length: token.length,
-  style: 'font-style: italic;font-weight: bold;',
+  style,
+  Decorator: PillDecorator,
+  decoratorStyle: {
+    backgroundColor: 'rgb(68, 68, 68)',
+    color: 'white',
+    fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+  },
   dropDown: {
-    activation: 'cursorposition',
-    options: ['item1', 'item2', 'item3'],
-  }
+    activation: 'mouseover',
+    options: ['on', 'off']
+  },
 }`}
       </pre>
       <div style={{ height: '300px', width: '600px', position: 'relative' }}>
@@ -162,6 +232,7 @@ TextBlock
             fontFamily:
               'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
           }}
+          clipInput
           lineHeight="40px"
           text={text}
           textBlocks={textBlocks}

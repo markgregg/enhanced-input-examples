@@ -1,15 +1,27 @@
 import * as React from 'react';
 import EnhancedInput, { TextBlock, ClearButton } from 'react-enhanced-input';
-import { isPrice, isSize, isinCodes, isinPartialRegEx, isinRegEx, tickerRegEx, tickers } from './data';
+import {
+  isPrice,
+  isSize,
+  isinCodes,
+  isinPartialRegEx,
+  isinRegEx,
+  tickerRegEx,
+  tickers,
+} from './data';
 
 export function StyledText() {
   const [text, setText] = React.useState<string>('');
   const [textBlocks, setTextBlocks] = React.useState<TextBlock[]>([]);
 
   React.useEffect(() => {
-    handleChange(`XS1966819226 asdkljs ahjklas kjk IT000453454 al,dsklaj klasjd lk
+    handleChange(
+      `XS1966819226 asdkljs ahjklas kjk IT000453454 al,dsklaj klasjd lk
     asdl sajkl; ABD l;kdl;k asd lasd;jk sa;k akjl kljkl jkj sad AT000B126958
-    FAN ZEN YY`, 0, true);
+    FAN ZEN YY`,
+      0,
+      true,
+    );
   }, []);
 
   const handleChange = (
@@ -37,14 +49,14 @@ export function StyledText() {
               id: `isin${pos}`,
               start: pos,
               length: token.length,
-              style: "color: rgb(68, 68, 68); font-weight: bold;"
+              style: 'color: rgb(68, 68, 68); font-weight: bold;',
             });
           } else {
             tempBlocks.push({
               id: `isin${pos}`,
               start: pos,
               length: token.length,
-              style: "color: rgb(154, 61, 55); font-weight: bold;"
+              style: 'color: rgb(154, 61, 55); font-weight: bold;',
             });
           }
         }
@@ -54,7 +66,7 @@ export function StyledText() {
             id: `ticker${pos}`,
             start: pos,
             length: token.length,
-            style: "color: rgb(68, 68, 68); font-weight: bold;"
+            style: 'color: rgb(68, 68, 68); font-weight: bold;',
           });
         }
       } else if (isSize(token)) {
@@ -63,7 +75,7 @@ export function StyledText() {
             id: `vol${pos}`,
             start: pos,
             length: token.length,
-            style: "color: rgb(68, 68, 68); font-weight: bold;"
+            style: 'color: rgb(68, 68, 68); font-weight: bold;',
           });
         }
       } else if (isPrice(token)) {
@@ -72,7 +84,7 @@ export function StyledText() {
             id: `prc${pos}`,
             start: pos,
             length: token.length,
-            style: "color: rgb(68, 68, 68); font-weight: bold;"
+            style: 'color: rgb(68, 68, 68); font-weight: bold;',
           });
         }
       } else if (
@@ -135,24 +147,26 @@ export function StyledText() {
   return (
     <div>
       <span>
-        The below example demonstrates styled text blocks.
-        The style property for a TextBlock is a string. The syle should be in CSS format, not React's format.
+        The below example demonstrates styled text blocks. The style property
+        for a TextBlock is a string. The syle should be in CSS format, not
+        React's format.
       </span>
       <pre>
-        {
-          `
+        {`
 style: 'color: rgb(68, 68, 68); font-weight: bold;'
-          `
-        }
+          `}
       </pre>
       <div style={{ height: '300px', width: '600px', position: 'relative' }}>
         <EnhancedInput
           style={{
-            fontFamily: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+            fontFamily:
+              'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
           }}
           text={text}
           textBlocks={textBlocks}
-          inputDecorator={<ClearButton onClick={() => handleChange('', 0, true)} />}
+          inputDecorator={
+            <ClearButton onClick={() => handleChange('', 0, true)} />
+          }
           onChange={(newText, position) =>
             handleChange(newText, position, true)
           }
