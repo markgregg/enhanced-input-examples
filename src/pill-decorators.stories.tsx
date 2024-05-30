@@ -9,6 +9,7 @@ import {
   tickerRegEx,
   tickers,
 } from './data';
+import './styles.css';
 
 export function PillDecorators() {
   const [text, setText] = React.useState<string>('');
@@ -181,12 +182,13 @@ export function PillDecorators() {
   };
 
   return (
-    <div>
-      <span>
+    <div className="storyStyle">
+      <h1>Enhanced Input With Pill Decorators</h1>
+      <div className="text">
         The below example demonstrates pill decorators (decorators that look
         like pills). The code for the TextBlock is shown below. A larger line
         height is recommended when deocrating text.
-      </span>
+      </div>
       <pre>
         {`
 TextBlock

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import EnhancedInput, { TextBlock, ClearButton } from 'react-enhanced-input';
+import EnhancedInput, { TextBlock } from 'react-enhanced-input';
 import {
   isPrice,
   isSize,
@@ -9,6 +9,7 @@ import {
   tickerRegEx,
   tickers,
 } from './data';
+import './styles.css';
 
 export function DropdownMenus() {
   const [text, setText] = React.useState<string>('');
@@ -133,15 +134,21 @@ export function DropdownMenus() {
   };
 
   return (
-    <div>
-      <span>
-        Dropdowns list can be assoicated against a TextBlock. They will always
+    <div className="storyStyle">
+      <h1>Enhanced Input With DropDown Menus</h1>
+      <div className="text">
+        Dropdown lists can be assoicated against a TextBlock. They will always
         appear just below the block. They can be activiated either by -<br />
-        <br />
-        <b>cursorposition:</b> when the cursor is within the TextBlock
-        <br />
-        <b>mouseover:</b> when the mouse is over the TextBlock
-      </span>
+        <ul>
+          <li>
+            <b>cursorposition:</b> when the cursor is within the TextBlock
+          </li>
+          <li>
+            <b>mouseover:</b> when the mouse is over the TextBlock
+          </li>
+        </ul>
+        The below example is activated by the position of the cursor.
+      </div>
       <pre>
         {`
 TextBlock

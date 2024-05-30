@@ -13,6 +13,7 @@ import {
   tickerRegEx,
   tickers,
 } from './data';
+import './styles.css';
 
 export function InputDecorator() {
   const [text, setText] = React.useState<string>('');
@@ -180,11 +181,12 @@ export function InputDecorator() {
   };
 
   return (
-    <div>
-      <span>
-        Input decorators can be any element. The below example shows a clear
-        button.
-      </span>
+    <div className="storyStyle">
+      <h1>Enhanced Input With Decorators (Buttons etc..)</h1>
+      <div className="text">
+        Decorators for the Ehanced Input can be any JSX element. The below
+        example shows a clear button.
+      </div>
       <pre>
         {`
 inputDecorator={<ClearButton onClick={() => handleChange('', 0, true)} />}

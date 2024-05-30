@@ -9,6 +9,7 @@ import {
   tickerRegEx,
   tickers,
 } from './data';
+import './styles.css';
 
 export function DropDownMenusMouse() {
   const [text, setText] = React.useState<string>('');
@@ -201,11 +202,12 @@ export function DropDownMenusMouse() {
   };
 
   return (
-    <div>
-      <span>
-        The below example demonstrates dropdown menus that activie when you move
-        yiouor mouse over a decorator
-      </span>
+    <div className="storyStyle">
+      <h1>Enhanced Input With DropDown Menus Activated By Mouse</h1>
+      <div className="text">
+        Below is an example of a dropdown menu that activates when the mouse is
+        over a decorator.
+      </div>
       <pre>
         {`
 TextBlock

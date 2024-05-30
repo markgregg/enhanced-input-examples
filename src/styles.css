@@ -1,0 +1,12 @@
+.storyStyle {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.text {
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+
+.enhancedInput {
+  width: 800px;
+}

@@ -9,6 +9,7 @@ import {
   tickerRegEx,
   tickers,
 } from './data';
+import './styles.css';
 
 export function StyledText() {
   const [text, setText] = React.useState<string>('');
@@ -145,12 +146,13 @@ export function StyledText() {
   };
 
   return (
-    <div>
-      <span>
+    <div className="storyStyle">
+      <h1>Basic Enhanced Input</h1>
+      <div className="text">
         The below example demonstrates styled text blocks. The style property
         for a TextBlock is a string. The syle should be in CSS format, not
-        React's format.
-      </span>
+        React&apos;s format.
+      </div>
       <pre>
         {`
 style: 'color: rgb(68, 68, 68); font-weight: bold;'
