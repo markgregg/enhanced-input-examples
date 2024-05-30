@@ -10,8 +10,8 @@
       "levels": [
         "Dropdown menus mouse"
       ],
-      "locStart": 13,
-      "locEnd": 252,
+      "locStart": 14,
+      "locEnd": 254,
       "filePath": "src/dropdown-menus-mouse.stories.tsx",
       "namedExport": "DropDownMenusMouse",
       "meta": {}
@@ -21,8 +21,8 @@
       "levels": [
         "Dropdown menus"
       ],
-      "locStart": 13,
-      "locEnd": 181,
+      "locStart": 14,
+      "locEnd": 188,
       "filePath": "src/dropdown-menus.stories.tsx",
       "namedExport": "DropdownMenus",
       "meta": {}
@@ -32,8 +32,8 @@
       "levels": [
         "Input decorator"
       ],
-      "locStart": 17,
-      "locEnd": 218,
+      "locStart": 18,
+      "locEnd": 220,
       "filePath": "src/input-decorator.stories.tsx",
       "namedExport": "InputDecorator",
       "meta": {}
@@ -43,8 +43,8 @@
       "levels": [
         "Pill decorators"
       ],
-      "locStart": 13,
-      "locEnd": 229,
+      "locStart": 14,
+      "locEnd": 231,
       "filePath": "src/pill-decorators.stories.tsx",
       "namedExport": "PillDecorators",
       "meta": {}
@@ -54,8 +54,8 @@
       "levels": [
         "Styled text"
       ],
-      "locStart": 13,
-      "locEnd": 183,
+      "locStart": 14,
+      "locEnd": 185,
       "filePath": "src/styled-text.stories.tsx",
       "namedExport": "StyledText",
       "meta": {}
@@ -66,7 +66,7 @@
         "Titled decorators"
       ],
       "locStart": 13,
-      "locEnd": 246,
+      "locEnd": 247,
       "filePath": "src/titled-decorators.stories.tsx",
       "namedExport": "TitleDecorators",
       "meta": {}
